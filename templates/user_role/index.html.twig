@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserRole index{% endblock %}
+
+{% block body %}
+    <h1>UserRole index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User_id</th>
+                <th>Role_id</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user_role in user_roles %}
+            <tr>
+                <td>{{ user_role.id }}</td>
+                <td>{{ user_role.userId }}</td>
+                <td>{{ user_role.roleId }}</td>
+                <td>{{ user_role.description }}</td>
+                <td>
+                    <a href="{{ path('user_role_show', {'id': user_role.id}) }}">show</a>
+                    <a href="{{ path('user_role_edit', {'id': user_role.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_role_new') }}">Create new</a>
+{% endblock %}

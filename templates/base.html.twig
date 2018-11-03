@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Admin!{% endblock %}</title>
+
+        {% block stylesheets %}
+            <head>
+
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta name="description" content="">
+                <meta name="author" content="">
+
+                <title> Admin -Eoser </title>
+
+                <!-- Bootstrap core CSS-->
+                <link href="{{  asset('vendor/bootstrap/css/bootstrap.min.css') }} " rel="stylesheet">
+
+                <!-- Custom fonts for this template-->
+                <link href=" {{  asset('vendor/fontawesome-free/css/all.min.css') }} " rel="stylesheet" type="text/css">
+
+                <!-- Page level plugin CSS-->
+                <link href=" {{ asset('vendor/datatables/dataTables.bootstrap4.css') }} " rel="stylesheet">
+
+                <!-- Custom styles for this template-->
+                <link href=" {{ asset('css/sb-admin.css') }} " rel="stylesheet">
+                <script src='https://www.google.com/recaptcha/api.js'></script>
+            </head>
+
+        {% endblock %}
+    </head>
+    <body>
+    <body id="page-top">
+
+    <nav class="navbar navbar-expand navbar-dark  static-top " style="background-color: rgb(0, 192, 255) ;" >
+
+        <a class="navbar-brand mr-1" href="{{ path('default') }}">e-oser Admin</a>
+
+        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar Search -->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+
+                </div>
+            </div>
+        </form>
+
+        <!-- Navbar -->
+        <ul class="navbar-nav ml-auto ml-md-0">
+
+            <li>
+                <div>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                   {#  <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a> #}
+                {% else %}
+                    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                {% endif %}
+                </div>
+            </li>
+            <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user-circle fa-fw"></i>
+
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+                    <a class="dropdown-item" href=" {{ path('fos_user_profile_edit') }} ">Modifier profil</a>
+                    <a class="dropdown-item" href=" {{ path('fos_user_change_password') }} ">Modifier Mot de passe</a>
+                    <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+
+                </div>
+
+            </li>
+        </ul>
+
+    </nav>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="sidebar navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('default') }} ">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Accueil</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Publication</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+                    <a class="dropdown-item" href="{{ path('actualite_new') }}">Nouveau</a>
+                    <a class="dropdown-item" href="{{ path('actualite_index') }}">Liste</a>
+
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Statistiques</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+                    <a class="dropdown-item" href="{{ path('default') }}">Recap</a>
+                    <a class="dropdown-item" href="{{ path('souscription_index') }}">Nouv. souscription</a>
+                    <a class="dropdown-item" href="{{ path('user_index') }}">Abonnés</a>
+                    <a class="dropdown-item" href="{{ path('souscription_index') }}">Souscription</a>
+                    <a href="{{ path('souscription_index') }}" class="dropdown-item">Desabonné</a>
+                    <a href="{{ path('service_index') }}" class="dropdown-item">Service</a>
+                    <a href="{{ path('actualite_index') }}" class="dropdown-item">Publication</a>
+
+
+                </div>
+            </li>
+            {# <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Paramètre</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+                    <a class="dropdown-item" href="{{ path('user_role_new') }}">Infos. personnelles</a>
+                    <a class="dropdown-item" href="{{ path('user_role_index') }}">Securité</a>
+                    <a class="dropdown-item" href="{{ path('user_role_index') }}">Liste</a>
+                    <a href="#" class="dropdown-item">Modifier</a>
+
+                </div>
+            </li> #}
+
+        </ul>
+        {% block body %}     {% endblock %}
+
+
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright © 2018 , Alcalis technologies </span>
+                </div>
+            </div>
+        </footer>
+
+        {% block javascripts %}
+            <!-- Bootstrap core JavaScript-->
+            <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+            <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }} "></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src=" {{ asset('vendor/jquery-easing/jquery.easing.min.js') }} "></script>
+
+            <!-- Page level plugin JavaScript-->
+            <script src=" {{ asset('vendor/chart.js/Chart.min.js') }} "></script>
+            <script src=" {{ asset('vendor/datatables/jquery.dataTables.js') }} "></script>
+            <script src=" {{ asset('vendor/datatables/dataTables.bootstrap4.js') }} "></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src=" {{ asset('') }} js/sb-admin.min.js"></script>
+
+            <!-- Demo scripts for this page-->
+            <script src=" {{ asset('js/demo/datatables-demo.js') }} "></script>
+            <script src=" {{ asset('js/demo/chart-area-demo.js') }} "></script>
+            <script>
+
+                $(document).ready(function() {
+
+                    count($("#actualite_information"),$("#count"));
+                    $("#actualite_information").keyup(function() {
+                        count($("#actualite_information"),$("#count"));
+                    });
+
+                    //alert('load');
+
+                    //par defaut, le block est caché, et lebouton desactive
+                    // $("#block-diffusion").hide();
+                    // $("#actualite_differe").attr('checked', false);
+
+                    $("#actualite_differe").click(function(){
+                        if ( $(this).is(':checked') ) {
+                            $("#block-diffusion").show();
+                        }else{
+                            $("#block-diffusion").hide();
+                        }
+                    });
+
+                    if ( $(this).is(':checked') ) {
+                        $("#block-diffusion").show();
+                        //alert('load1');
+                    }else{
+                        $("#block-diffusion").hide();
+                        $("#actualite_differe").attr('checked', false);
+                        // alert('load2');
+                    }
+                    // alert('load0');
+
+                });
+
+                function count(src,dest){
+                    var maxCaractere = 160;
+                    var signature='linfodrome.ci';
+                    var nbreCaractereSignature = signature.length;
+                    var nbreCaractereConseille = maxCaractere - nbreCaractereSignature;
+
+                    var txtVal = src.val();
+                    var words = txtVal.trim().replace(/\s+/gi, ' ').split(' ').length;
+                    var chars = txtVal.length;
+                    if(chars===0){words=0;}
+                    //dest.html(words+' words<br/>'+ chars +' chars');
+                    //	  dest.html('<br/>'+ chars +' caractères');
+//		dest.html('<br/>'+ nbreCaractereConseille +' caractères');
+                    dest.html('<small><span class="text-info">'+chars +'</span> caractères</small><br/><br/>');
+                    $("#maxCaractere").html(nbreCaractereConseille);
+                }
+
+            </script>
+
+        {% endblock %}
+    </body>
+</html>

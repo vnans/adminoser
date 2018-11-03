@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ path('default') }}">accueil</a>
+            </li>
+            <li class="breadcrumb-item active">Abonnés</li>
+        </ol>
+
+
+
+        <!-- Area Chart Example-->
+        <!--  <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-chart-area"></i>
+                Area Chart Example</div>
+            <div class="card-body">
+                <canvas id="myAreaChart" width="100%" height="30"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div> -->
+
+
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Liste des Abonnés</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Téléphone</th>
+                            <th>Date de souscription</th>
+                            <th>Statut</th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for user in users %}
+                            <tr>
+
+                                <td>{{ user.tel }}</td>
+                                <td>{{ user.dateCreation ? user.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                                <td>{{ user.statut }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="12">Aucun abonné trouvé</td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Mis à jour  lundi  à 11:59 PM</div>
+        </div>
+
+    </div>
+{% endblock %}

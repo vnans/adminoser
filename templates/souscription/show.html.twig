@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Souscription{% endblock %}
+
+{% block body %}
+    <h1>Souscription</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ souscription.id }}</td>
+            </tr>
+            <tr>
+                <th>Abonne_id</th>
+                <td>{{ souscription.abonneId }}</td>
+            </tr>
+            <tr>
+                <th>Service_id</th>
+                <td>{{ souscription.serviceId }}</td>
+            </tr>
+            <tr>
+                <th>DateDebut</th>
+                <td>{{ souscription.dateDebut ? souscription.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateFin</th>
+                <td>{{ souscription.dateFin ? souscription.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateReception</th>
+                <td>{{ souscription.dateReception ? souscription.dateReception|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateFacturation</th>
+                <td>{{ souscription.dateFacturation ? souscription.dateFacturation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateReabonnement</th>
+                <td>{{ souscription.dateReabonnement ? souscription.dateReabonnement|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateDesabonnement</th>
+                <td>{{ souscription.dateDesabonnement ? souscription.dateDesabonnement|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nbre</th>
+                <td>{{ souscription.nbre }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ souscription.statut }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('souscription_index') }}">back to list</a>
+
+    <a href="{{ path('souscription_edit', {'id': souscription.id}) }}">edit</a>
+
+    {{ include('souscription/_delete_form.html.twig') }}
+{% endblock %}

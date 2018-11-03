@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Actualite{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="card card-login mx-auto mt-5">
+        {{ include('actualite/_form.html.twig') }}
+        </di>
+
+</div>
+
+
+
+    <a href="{{ path('actualite_index') }}">Retour à la Liste</a>
+{% endblock %}
+
+

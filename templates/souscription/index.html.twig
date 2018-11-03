@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Souscription index{% endblock %}
+
+{% block body %}
+
+<div id="content-wrapper">
+
+    <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="{{ path('default') }}">accueil</a>
+            </li>
+            <li class="breadcrumb-item active">Nouv souscription</li>
+        </ol>
+
+
+
+        <!-- Area Chart Example-->
+        <!--  <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-chart-area"></i>
+                Area Chart Example</div>
+            <div class="card-body">
+                <canvas id="myAreaChart" width="100%" height="30"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div> -->
+
+
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Liste des Nouv. souscriptions</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Tel</th>
+                            <th>Debut</th>
+                            <th>Fin</th>
+                            <th>Nombre</th>
+                            <th>Reception</th>
+                            <th>Service</th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for souscription in souscriptions %}
+                            <tr>
+
+                                <td>{{ souscription.abonneId }}</td>
+                                <td>{{ souscription.dateDebut ? souscription.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+                                <td>{{ souscription.dateFin ? souscription.dateFin|date('Y-m-d H:i:s') : '' }}</td>
+                                <td>{{ souscription.nbre }}</td>
+                                <td>{{ souscription.dateReception ? souscription.dateReception|date('Y-m-d H:i:s') : '' }}</td>
+                                <td>{{ souscription.serviceId }}</td>
+
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="12">Aucune souscription trouvée</td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Mis à jour  lundi  à 11:59 PM</div>
+        </div>
+
+    </div>
+
+
+
+
+{% endblock %}

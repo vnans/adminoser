@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Facturation{% endblock %}
+
+{% block body %}
+    <h1>Facturation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ facturation.id }}</td>
+            </tr>
+            <tr>
+                <th>Souscription_id</th>
+                <td>{{ facturation.souscriptionId }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ facturation.montant }}</td>
+            </tr>
+            <tr>
+                <th>SoldeInitial</th>
+                <td>{{ facturation.soldeInitial }}</td>
+            </tr>
+            <tr>
+                <th>SoldeRestant</th>
+                <td>{{ facturation.soldeRestant }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ facturation.description }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ facturation.date ? facturation.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ facturation.statut }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ facturation.tel }}</td>
+            </tr>
+            <tr>
+                <th>Smsc</th>
+                <td>{{ facturation.smsc }}</td>
+            </tr>
+            <tr>
+                <th>ServiceCode</th>
+                <td>{{ facturation.serviceCode }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('facturation_index') }}">back to list</a>
+
+    <a href="{{ path('facturation_edit', {'id': facturation.id}) }}">edit</a>
+
+    {{ include('facturation/_delete_form.html.twig') }}
+{% endblock %}

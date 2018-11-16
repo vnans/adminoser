@@ -1,0 +1,12 @@
+RewriteEngine On
+            RewriteCond %{SERVER_PORT} 80
+            RewriteCond %{HTTP_HOST} ^(www\.)?eoser.alcalis\.tech
+            RewriteRule ^(.*)$ https://www.eoser.alcalis.tech/$1 [R,L]
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteRule ^(.*)$ public/index.php [QSA,L]
+            RewriteCond %{HTTP:Authorization} ^(.*)
+            RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+            RewriteEngine On
+<IfModule mime_module> 
+AddType application/x-httpd-alt-php72 .php .php7 .phtml
+<IfModule>

@@ -146,7 +146,7 @@
         <footer class="sticky-footer">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright © 2018 , Alcalis technologies </span>
+                    <span>Copyright © 2018 , <b>ALCALIS TECHNOLOGIES</b> </span>
                 </div>
             </div>
         </footer>
@@ -221,6 +221,18 @@
                     dest.html('<small><span class="text-info">'+chars +'</span> caractères</small><br/><br/>');
                     $("#maxCaractere").html(nbreCaractereConseille);
                 }
+
+                $(function() {
+
+                $('#action').click(function() {
+
+                var param = 'l=' + $('#ref').val();
+
+                    $('#r').load('http://www.proverbes.php',param);
+
+                });  
+
+                });
 
             </script>
 

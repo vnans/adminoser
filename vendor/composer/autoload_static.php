@@ -55,6 +55,7 @@ class ComposerStaticInit6ff4824fb785c7314d5e37ea8c279924
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\ExpressionLanguage\\' => 37,
             'Symfony\\Component\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\Dotenv\\' => 25,
             'Symfony\\Component\\DependencyInjection\\' => 38,
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
@@ -227,6 +228,10 @@ class ComposerStaticInit6ff4824fb785c7314d5e37ea8c279924
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
+        ),
+        'Symfony\\Component\\Dotenv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/dotenv',
         ),
         'Symfony\\Component\\DependencyInjection\\' => 
         array (
@@ -2475,6 +2480,11 @@ class ComposerStaticInit6ff4824fb785c7314d5e37ea8c279924
         'Symfony\\Component\\DependencyInjection\\TaggedContainerInterface' => __DIR__ . '/..' . '/symfony/dependency-injection/TaggedContainerInterface.php',
         'Symfony\\Component\\DependencyInjection\\TypedReference' => __DIR__ . '/..' . '/symfony/dependency-injection/TypedReference.php',
         'Symfony\\Component\\DependencyInjection\\Variable' => __DIR__ . '/..' . '/symfony/dependency-injection/Variable.php',
+        'Symfony\\Component\\Dotenv\\Dotenv' => __DIR__ . '/..' . '/symfony/dotenv/Dotenv.php',
+        'Symfony\\Component\\Dotenv\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/dotenv/Exception/ExceptionInterface.php',
+        'Symfony\\Component\\Dotenv\\Exception\\FormatException' => __DIR__ . '/..' . '/symfony/dotenv/Exception/FormatException.php',
+        'Symfony\\Component\\Dotenv\\Exception\\FormatExceptionContext' => __DIR__ . '/..' . '/symfony/dotenv/Exception/FormatExceptionContext.php',
+        'Symfony\\Component\\Dotenv\\Exception\\PathException' => __DIR__ . '/..' . '/symfony/dotenv/Exception/PathException.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcherInterface' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcherInterface.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/WrappedListener.php',

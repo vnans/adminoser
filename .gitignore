@@ -3,6 +3,8 @@
 /.env
 /public/bundles/
 /var/
+/tests/
+/translations/
 
 ###< symfony/framework-bundle ###
 

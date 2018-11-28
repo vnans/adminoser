@@ -66,6 +66,16 @@ class Actualite
      */
     private $differe;
 
+    public function __construct(){
+        
+        $this->datePublication = new \DateTime("now");
+    }
+
+    // public function onPrePersist()
+    // {
+    //     $this->datePublication = new \DateTime("now");
+    // }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -5,9 +5,9 @@
         <div class="card-header"> <h1>Publication</h1> </div>
         <div class="card-body">
             <form>
+
+
                 <label for="inputPassword">Service :</label> {{ form_widget(form.service_id) }}
-
-
 
                 <div class="form-group">
                     <label for="">Titre :</label> {{ form_widget(form.titre) }}
@@ -33,6 +33,11 @@
                         {{ form_widget(form.dateDiffusion) }}
                     </div>
                 </div>
+                <div class="form-label-group">
+                     {{ form_widget(form.service_id , { 'attr': {'type':'hidden'}}) }}
+                </div>
+               
+
                 <div class="g-recaptcha" data-sitekey="6Lc7h3gUAAAAAMfnnsp2HhWgeZHhfU4Af7AIpurp"></div> 
 
 

@@ -1,0 +1,169 @@
+/*
+Default accent color
+
+*/
+a:hover {
+	color:rgb(81, 125, 175);
+}
+
+/* menu */
+.navbar nav ul.nav li.dropdown ul.dropdown-menu li a:active,.navbar nav ul.nav li.dropdown ul.dropdown-menu li a:focus {
+  background: rgb(81, 125, 175);
+}
+ul.topmenu li a:hover {
+	color:rgb(81, 125, 175);
+}
+
+/* slider */
+.bg-color {
+  background: rgb(81, 125, 175);
+}
+
+/* layerslider */
+.ls-highlighted-h.color {
+	background: rgb(81, 125, 175);	
+}
+
+/* form */
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgb(81, 125, 175);
+}
+
+form#contactform .validation {
+	color:rgb(81, 125, 175);
+}
+#sendmessage {
+	border:1px solid rgb(81, 125, 175);
+
+}
+
+/* icon */
+[class^="icon-"].active {
+	color:rgb(81, 125, 175);
+}
+
+a i.icon-bglight:hover,
+a i.icon-bgdark:hover {
+  background: rgb(81, 125, 175);
+}
+i.icon-bglight.active {
+  background: rgb(81, 125, 175);
+}
+
+ul.styledlist li:before {
+	color:rgb(81, 125, 175);
+}
+
+/* logo icon */
+.logo h1 [class^="icon-"] {
+	color:rgb(81, 125, 175);
+}
+
+.footer_logo h3 [class^="icon-"] {
+	color:rgb(81, 125, 175);
+}
+
+/* CTA */
+.cta-text h2 span {
+	color:rgb(81, 125, 175);
+}
+
+/*-- button -- */
+.btn-color {
+  border:1px solid rgb(81, 125, 175);
+  background: rgb(81, 125, 175);
+}
+
+/* content */
+.box:hover .text h4 {
+	color:rgb(81, 125, 175);
+}
+#inner-headline ul.breadcrumb li a:hover {
+	color:rgb(81, 125, 175);
+}
+
+a.thumbnail:hover,
+a.thumbnail:focus {
+  border-color: rgb(81, 125, 175);
+}
+
+/* blog */
+article .post-heading h3 a:hover {
+	text-decoration:none;
+	color:rgb(81, 125, 175);
+}
+
+ul.cat li a:hover, ul.folio-detail li a:hover{
+	color:rgb(81, 125, 175);
+}
+
+.meta-post a.author:hover,.meta-post a.date:hover {
+  background: rgb(81, 125, 175);
+}
+
+.about-author {
+	background: rgb(81, 125, 175);
+}
+
+.meta-bottom li a:hover {
+	color:rgb(81, 125, 175);
+}
+
+#pagination a:hover {
+  background: rgb(81, 125, 175);
+}
+
+/* component */
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  background: rgb(81, 125, 175);
+  border:1px solid rgb(81, 125, 175);
+}
+.pagination ul > .active > a:hover,
+.pagination ul > .active > span:hover {
+  background: rgb(81, 125, 175);
+  border:1px solid rgb(81, 125, 175);
+}
+.pagination ul > li > a:hover{
+  color:rgb(81, 125, 175);
+}
+
+.pullquote-left {
+	border-left:5px solid rgb(81, 125, 175);
+}
+
+.pullquote-right {
+	border-right:5px solid rgb(81, 125, 175);
+}
+
+.pricing-box-wrap.special .pricing-heading {
+	background: rgb(81, 125, 175);
+}
+
+/* portfolio */
+ul.portfolio-categ.filter li.active a {
+  color:rgb(81, 125, 175);
+}
+
+/* footer */
+footer a:hover {
+	color:rgb(81, 125, 175);
+}
+footer ul.link-list li a:hover {
+	color:rgb(81, 125, 175);
+}

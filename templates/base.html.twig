@@ -27,20 +27,47 @@
                 <!-- Custom styles for this template-->
                 <link href=" {{ asset('css/sb-admin.css') }} " rel="stylesheet">
                 <script src='https://www.google.com/recaptcha/api.js'></script>
+
+<!-- css accuil -->
+  <link href=" {{ asset('https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800')}} " rel="stylesheet">
+  <link href=" {{ asset('css/bootstrap.css')}} " rel="stylesheet" />
+  <link href=" {{ asset('css/bootstrap-responsive.css')}} " rel="stylesheet" />
+  <link href=" {{  asset('css/flexslider.css')}} " rel="stylesheet" />
+  <link href=" {{ asset('css/prettyPhoto.css') }} " rel="stylesheet" />
+  <link href=" {{ asset('css/camera.css')}} " rel="stylesheet" />
+  <link href=" {{ asset('css/jquery.bxslider.css')}} " rel="stylesheet" />
+  <link href="{{ asset('css/style.css')}} " rel="stylesheet" />
+
+  <!-- Theme skin -->
+  <link href="  {{ asset('color/alcalis.css')}} " rel="stylesheet" />
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href=" {{ asset('ico/apple-touch-icon-144-precomposed.png')}} " />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href=" {{ asset('ico/apple-touch-icon-114-precomposed.png')}} " />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href=" {{ asset('ico/apple-touch-icon-72-precomposed.png')}} " />
+  <link rel="apple-touch-icon-precomposed" href=" {{ asset('ico/apple-touch-icon-57-precomposed.png')}} " />
+  <link rel="shortcut icon" href=" {{ asset('ico/favicon.png')}} " />
+
+
+
+
             </head>
+
+
+
 
         {% endblock %}
     </head>
     <body>
     <body id="page-top">
 
-    <nav class="navbar navbar-expand navbar-dark  static-top " style="background-color: rgb(0, 192, 255) ;" >
+    <nav class="navbar navbar-expand navbar-dark  static-top " style="background-color: rgb(65, 113, 169) ;" >
 
-        <a class="navbar-brand mr-1" href="{{ path('default') }}">e-oser Admin</a>
+        <a class="navbar-brand mr-1" href="{{ path('default') }}"> <img src=" {{ asset('img/logo_oser.jpg')}} " alt=""> </a>
 
-        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+       {#  <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
-        </button>
+        </button> #}
 
         <!-- Navbar Search -->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">

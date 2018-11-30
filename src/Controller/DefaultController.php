@@ -13,14 +13,12 @@ class DefaultController extends AbstractController
      */
     public function accueil()
     {
-        return $this->render('@FOSUser/Security/login.html.twig', array(
-            'last_username' => null,
-            'error' => null,
-            'csrf_token' => null,
-        ) );
-        /*return $this->render('default/login.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);*/
+        // return $this->render('@FOSUser/Security/login.html.twig', array(
+        //     'last_username' => null,
+        //     'error' => null,
+        //     'csrf_token' => null,
+        // ) );
+        return $this->render('default/accueil.html.twig');
     }
     /**
      * @Route("/default", name="default")

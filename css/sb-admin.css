@@ -90,7 +90,8 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 }
 
 .navbar-nav .nav-item.active .nav-link {
-  color: #fff;
+color: #fff;
+/*color: rgb(81, 125, 175);*/
 }
 
 .navbar-nav .nav-item.dropdown .dropdown-toggle::after {
@@ -132,8 +133,9 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 .sidebar {
   width: 90px !important;
- /* background-color: #212529; */
- background-color: rgb(0, 192, 255) ;
+  /*background-color: #212529; */
+  /*background-color:rgb(232, 236, 239);*/
+  background-color:rgb(76, 122, 174);
 
   min-height: calc(100vh - 56px);
 }
@@ -172,7 +174,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 .sidebar .nav-item .nav-link {
 /*  color: rgba(255, 255, 255, 0.5);*/
-color: rgb(255, 255,255,1)
+color: rgb(255, 255,255,1);
 }
 
 .sidebar .nav-item .nav-link:active, .sidebar .nav-item .nav-link:focus, .sidebar .nav-item .nav-link:hover {

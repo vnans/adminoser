@@ -43,13 +43,13 @@ security:
         # - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/default, role: ROLE_USER }
-        - { path: ^/actualite, role: ROLE_ADMIN }
-        - { path: ^/souscription, role: ROLE_ADMIN }
-        - { path: ^/facturation, role: ROLE_ADMIN }
-        - { path: ^/role, role: ROLE_ADMIN }
-        - { path: ^/service, role: ROLE_ADMIN }
-        - { path: ^/user, role: ROLE_ADMIN }
-        - { path: ^/user_role, role: ROLE_ADMIN }
+        - { path: ^/actualite, role: ROLE_USER }
+        - { path: ^/souscription, role: ROLE_USER }
+        - { path: ^/facturation, role: ROLE_USER }
+        - { path: ^/role, role: ROLE_USER }
+        - { path: ^/service, role: ROLE_USER }
+        - { path: ^/user, role: ROLE_USER }
+        - { path: ^/user_role, role: ROLE_USER }
 
 
         

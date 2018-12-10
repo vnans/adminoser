@@ -69,7 +69,10 @@ class Actualite
     public function __construct(){
         
         $this->datePublication = new \DateTime("now");
+        $this->valide = 1 ;
+        $this->dateDiffusion = new \DateTime("now");
     }
+
 
     // public function onPrePersist()
     // {

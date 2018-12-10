@@ -3,9 +3,18 @@
 {% block title %}Actualite{% endblock %}
 
 {% block body %}
-    <h1>Actualite</h1>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">  <h1> Détail de la publication</h1> </div>
+            <div class="col-md-6">
+                  <a href="{{ path('actualite_edit', {'id': actualite.id}) }}"> <button class="btn btn-default" >Modifier</button> </a> 
+                {# <a href="{{ path('actualite_index') }}">back to list</a> #} 
+            </div>
+          
 
-    <table class="table">
+        </div>
+        <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -54,9 +63,10 @@
         </tbody>
     </table>
 
-    <a href="{{ path('actualite_index') }}">back to list</a>
+    </div>
 
-    <a href="{{ path('actualite_edit', {'id': actualite.id}) }}">edit</a>
+    
+   {#  <a href="{{ path('actualite_index') }}">back to list</a> #}
 
-    {{ include('actualite/_delete_form.html.twig') }}
+   
 {% endblock %}

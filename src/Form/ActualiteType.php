@@ -23,8 +23,8 @@ class ActualiteType extends AbstractType
                'choices'  => array(
                    'EOSER' => 1,
 
-               ),
-           ))
+                  ),
+                 ))
             ->add('titre')
             ->add('information',TextareaType::class , array(
                 'attr' => array('cols' => '35', 'rows' => '8', 'id'=> 'actualite_information'),

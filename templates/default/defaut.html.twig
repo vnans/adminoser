@@ -1,0 +1,244 @@
+{% extends 'baseweb.html.twig' %}
+
+{% block title %}Accueil-eoser!{% endblock %}
+
+{% block body %}
+
+<body class="page-index has-hero">
+  <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
+  <div id="background-wrapper" class="buildings" data-stellar-background-ratio="0.1">
+
+    <!-- ======== @Region: #navigation ======== -->
+    <div id="navigation" class="wrapper">
+      <!--Hidden Header Region-->
+      <div class="header-hidden collapse">
+        <div class="header-hidden-inner container">
+          <div class="row">
+            <div class="col-md-3">
+              <h3>
+                 A propos de nous
+                </h3>
+              <p>E-oser la plateforme numerique de l'OSER.</p>
+              <!-- <a href="about.html" class="btn btn-more"><i class="fa fa-plus"></i> Learn more</a> -->
+            </div>
+            <div class="col-md-3">
+              <!--@todo: replace with company contact details-->
+              <h3>
+                  Contactez Nous
+                </h3>
+              <address>
+                  <strong>E-oser Cote d'Ivoire</strong>
+                  <abbr title="Address"><i class="fa fa-pushpin"></i></abbr>
+                  Abidjan, Cote d'Ivoire.
+                  <br>
+                  <abbr title="Phone"><i class="fa fa-phone"></i></abbr>
+                  01 00 11 80
+                  <br>
+                  <abbr title="Email"><i class="fa fa-envelope-alt"></i></abbr>
+                  eoser@eoser.com
+                </address>
+            </div>
+            <div class="col-md-6">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Header & navbar-branding region-->
+      <div class="header">
+        <div class="header-inner container">
+          <div class="row">
+            <div class="col-md-8">
+              <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
+              <a class="navbar-brand" href="index.html" title="Home" style="height:100px; width: 200px;">
+                <h1 class="hidden">
+                    <img src="http://officedesecuriteroutiere.ci/wp-content/uploads/2016/09/cropped-cropped-logo_oser.jpg" alt="Flexor Logo">
+                    E-oser
+                  </h1>
+              </a>
+              <div class="navbar-slogan" style="color : green">
+                Office National de la 
+                <br> securité routière
+              </div>
+            </div>
+            <!--header rightside-->
+            <div class="col-md-4">
+              <!--user menu-->
+              <ul class="list-inline user-menu pull-right">
+                <li class="user-button"><a class="btn btn-primary btn-hh-trigger" role="button" data-toggle="collapse" data-target=".header-hidden">Open</a></li>
+              </ul>
+              <ul class="list-inline user-menu pull-right">
+                <!-- <li class="user-register"><i class="fa fa-edit text-primary "></i> <a href="register.html" class="text-uppercase">Register</a></li> -->
+                <li class="user-login"><i class="fa fa-sign-in text-primary"></i> <a href="{{path('accueil')}}" class="text-uppercase">connexion</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+       
+      </div>
+    </div>
+    <div class="hero" id="highlighted">
+      <div class="inner">
+        <!--Slideshow-->
+        <div id="highlighted-slider" class="container">
+          <div class="item-slider" data-toggle="owlcarousel" data-owlcarousel-settings='{"singleItem":true,"navigation":true, "transitionStyle":"fadeUp"}'>
+            <!--Slideshow content-->
+            <!--Slide 1-->
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6 col-md-push-6 item-caption">
+                  <h2 class="h1 text-weight-light" style="color:rgb(64, 64, 255)"> <b> Envoyer <span class="text-primary">   eoser  </span> au 98025 par SMS</b>
+                    
+                    </h2>
+                  <h4 style="color: green">
+                     <b>Conduisez tout en etant connecté.</b> 
+                    </h4>
+                  <p style="color:rgb(64, 64, 255)"><b>Soyez au courant de tout l'actualité routiere du pays a tous moment </b> .</p>
+                  <!-- <a href="https://bootstrapmade.com" class="btn btn-more btn-lg i-right">Buy Now <i class="fa fa-plus"></i></a> -->
+                </div>
+                <div class="col-md-6 col-md-pull-6 hidden-xs">
+                  <img src="{{ asset('flexor/img/slides/slide3.png') }}" alt="Slide 1" class="center-block img-responsive">
+                </div>
+              </div>
+            </div>
+{#             <!--Slide 2-->
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6 text-right-md item-caption">
+                  <h2 class="h1 text-weight-light">
+                      <span class="text-primary"> E-oser</span> Sur tous support
+                    </h2>
+                  <h4>
+                      Avec ou sans connexion internet 
+                    </h4>
+                  <p>Recevez les notificatiuons d'actualité routiere via SMS et sur la plateforme web.</p>
+                  <!-- <a href="https://bootstrapmade.com" class="btn btn-more btn-lg"><i class="fa fa-plus"></i> Learn More</a> -->
+                </div>
+                <div class="col-md-6 hidden-xs">
+                  <img src="{{ asset('flexor/img/slides/slide2.png') }}" alt="Slide 2" class="center-block img-responsive">
+                </div>
+              </div>
+            </div> #}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== @Region: #content ======== -->
+  <div id="content">
+    <!-- Mission Statement -->
+    <div class="block block-pd-sm block-bg-primary">
+    <div class="container">
+      <div class="row">
+        <h3 class="col-md-4">
+            Nos partenaires
+          </h3>
+        <div class="col-md-8">
+          <div class="row">
+            <!--Client logos should be within a 120px wide by 60px height image canvas-->
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 1">
+                  <img src=" {{asset('flexor/img/clients/client1.png') }} " alt="Client 1 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 2">
+                  <img src="{{asset('flexor/img/clients/client2.png') }}  " alt="Client 2 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 3">
+                  <img src=" {{ asset('flexor/img/clients/client3.png') }} " alt="Client 3 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 4">
+                  <img src=" {{ asset('flexor/img/clients/client4.png') }} " alt="Client 4 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 5">
+                  <img src="flexor/img/clients/client5.png" alt="Client 5 logo" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <a href="https://bootstrapmade.com" title="Client 6">
+                  <img src=" {{ asset('flexor/img/clients/client6.png') }} " alt="Client 6 logo" class="img-responsive">
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+   
+    <!--Customer testimonial & Latest Blog posts-->
+    <div class="testimonials block-contained">
+      <div class="row">
+        <!--Customer testimonial-->
+        <div class="col-md-6 m-b-lg">
+          <h3 class="block-title">
+              Dernieres publications  
+            </h3>
+            {% for actualite in actualites %}
+                <blockquote>
+                  <p>{{ actualite.information }}</p>
+                  <img src="http://news.abidjan.net/photos/photos/embouteillage_abidjan.jpg" alt="Charles Spencer Chaplin">
+                  <!-- <small>
+                      <strong>Charles Chaplin</strong>
+                      <br>
+                      British comic actor
+                    </small> -->
+                </blockquote> 
+                        {% else %}
+                            <tr>
+                                <td colspan="12">Aucune publication trouvée</td>
+
+                            </tr>
+            
+                        {% endfor %}
+          
+         
+        </div>
+        <!--Latest Blog posts-->
+        <div class="col-md-6 blog-roll">
+          <h3 class="block-title">
+              Arcticles publiés 
+            </h3>
+          <!-- Blog post 1-->
+          {% for article in articles %}
+            <div class="media">
+            <div class="media-left hidden-xs">
+              <!-- Date desktop -->
+              <div class="date-wrapper"> <span class="date-m">{{ article.ladate ? article.ladate|date('m') : '' }}</span> <span class="date-d">{{ article.ladate ? article.ladate|date('d') : '' }}</span> </div>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">
+                  <a href="#" class="text-weight-strong">{{ article.titre }}</a>
+                </h4>
+              <!-- Meta details mobile -->
+              <ul class="list-inline meta text-muted visible-xs">
+                <li><i class="fa fa-calendar"></i> <span class="visible-md">Created:</span> {{ article.ladate ? article.ladate|date('Y-m-d H:i:s') : '' }}</li>
+                <li><i class="fa fa-user"></i> <a href="#">Joe</a></li>
+              </ul>
+              <p>
+                {{ article.contenu }}
+                <a href="{{ path('article_show', {'id': article.id}) }}">Lire la suite <i class="fa fa-angle-right"></i></a>
+              </p>
+            </div>
+          </div>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucun articles publié</td>
+            </tr>
+        {% endfor %}
+                    
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

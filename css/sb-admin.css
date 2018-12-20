@@ -135,7 +135,7 @@ color: #fff;
   width: 90px !important;
   /*background-color: #212529; */
   /*background-color:rgb(232, 236, 239);*/
-  background-color: rgb(76, 122, 174); 
+  background-color:rgb(76, 122, 174);
 
   min-height: calc(100vh - 56px);
 }

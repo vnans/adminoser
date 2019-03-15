@@ -5,6 +5,7 @@
 /var/
 /tests/
 /translations/
+/htaccess
 
 
 ###< symfony/framework-bundle ###

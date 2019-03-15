@@ -109,7 +109,7 @@
                 </div>
 
                 {% endif %}
-                
+
             </li>
         </ul>
 
@@ -159,6 +159,20 @@
                     <a href="{{ path('souscription_index') }}" class="dropdown-item">Desabonné</a>
                     <a href="{{ path('service_index') }}" class="dropdown-item">Service</a>
                     <a href="{{ path('actualite_index') }}" class="dropdown-item">Publication</a>
+
+
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Contenu web</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+                    <a class="dropdown-item" href="{{ path('article_new') }}">articles</a>
+                    <a class="dropdown-item" href="{{ path('video_new') }}">videos</a>
+                    
 
 
                 </div>
@@ -269,7 +283,7 @@
 
                     $('#r').load('http://www.proverbes.php',param);
 
-                });  
+                });
 
                 });
 

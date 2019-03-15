@@ -3,9 +3,15 @@
 {% block title %}New Article{% endblock %}
 
 {% block body %}
-    <h1>Create new Article</h1>
+    <!-- <h1>Create new Article</h1> -->
+    <div class="container">
+      <div class="card card-login mx-auto mt-6">
+        <h1>Ajouter un article</h1>
+        {{ include('article/_form.html.twig') }}
 
-    {{ include('article/_form.html.twig') }}
+      </div>
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    </div>
+
+    <!-- <a href="{{ path('article_index') }}">back to list</a> -->
 {% endblock %}

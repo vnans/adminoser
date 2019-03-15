@@ -6,7 +6,7 @@
    <title>{% block title %}eoser !{% endblock %}</title>
 
               {% block stylesheets %}
-            
+
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -31,23 +31,26 @@
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/72x72.png">
   <link rel="apple-touch-icon-precomposed" href="img/icons/default.png">
 
+
+
+
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="{{ asset('flexor/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href=" {{ asset('new/lib/bootstrap/css/bootstrap.min.css')}} " rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href=" {{asset('flexor/lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-  <link href=" {{asset('flexor/lib/font-awesome/css/font-awesome.min.css')}} " rel="stylesheet">
-  <link href=" {{asset('flexor/lib/owlcarousel/owl.theme.min.css')}} " rel="stylesheet">
-  <link href=" {{asset('flexor/lib/owlcarousel/owl.transitions.min.css')}} " rel="stylesheet">
+  <link href=" {{ asset('new/lib/font-awesome/css/font-awesome.min.css')}} " rel="stylesheet">
+  <link href=" {{ asset('new/lib/animate/animate.min.css')}} " rel="stylesheet">
+  <link href=" {{ asset('new/lib/ionicons/css/ionicons.min.css')}} " rel="stylesheet">
+  <link href=" {{ asset('new/lib/owlcarousel/assets/owl.carousel.min.css')}} " rel="stylesheet">
+  <link href=" {{ asset('new/lib/lightbox/css/lightbox.min.css')}} " rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href=" {{asset('flexor/css/style.css') }}" rel="stylesheet">
+  <link href=" {{ asset('new/css/style.css')}} " rel="stylesheet">
 
-  <!--Your custom colour override - predefined colours are: colour-blue.css, colour-green.css, colour-lavander.css, orange is default-->
-  <link href=" {{asset('flexor/css/colour-green.css') }}" id="colour-scheme" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: Flexor
@@ -56,65 +59,85 @@
     Author URL: https://bootstrapmade.com
   ======================================================= -->
 </head>
+<!--==========================
+Header
+============================-->
+<header id="header" class="fixed-top">
+  <div class="container">
 
+    <div class="logo float-left">
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+      <a href="#intro" class="scrollto"><img src="  {{ asset('new/img/logo.jpg') }}" alt="" class="img-fluid"></a>
+    </div>
 
+    <nav class="main-nav float-right d-none d-lg-block">
+      <ul>
+        <li class="active"><a href="#intro">Accueil</a></li>
+        <li><a href="#about">A propos</a></li>
+        <li><a href="#services">Actu</a></li>
+        <li><a href="#portfolio">Videos</a></li>
+          <li><a href="#why-us">Articles</a></li>
+        <li><a href="#contact">Contacts</a></li>
 
-{% endblock %}
-  
-    
-    
+        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_PARTENAIRE') %}
+        <li><a href="{{path('default') }}">Espace admin</a></li>
+        {% elseif  not is_granted('ROLE_USER') == false  %}
+        <li><a href="{{path('fos_user_security_logout') }}">Se déconnecter</a></li>
+        {% else %}
+                <li><a href="{{path('fos_user_security_login') }}">se connecter</a></li>
+         {% endif %}
 
+      </ul>
+    </nav><!-- .main-nav -->
 
-{% block body %}   
-
-    
-
-{% endblock %}
-
-  <div class="container alert alert-info " style="position : fixed ; left :0 ; bottom :0 ; with:100% ">
-  <strong  class="alert alert-warning" ><i class="fa fa-warning"></i> Flash Info !</strong> <marquee><p style="font-family: Impact; font-size: 16pt">Embouteillage sur le boulevard latrille </p></marquee>
   </div>
+</header><!-- #header -->
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block body %}
+
+
+
+{% endblock %}
+
+  <!-- <div class="container alert alert-info " style="position : fixed ; left :0 ; bottom :0 ; with:100% ">
+  <strong  class="alert alert-warning" ><i class="fa fa-warning"></i> Flash Info !</strong> <marquee><p style="font-family: Impact; font-size: 16pt">Embouteillage sur le boulevard latrille </p></marquee>
+  </div> -->
 
  <!-- ======== @Region: #footer ======== -->
-  <footer id="footer" class="block block-bg-grey-dark" data-block-bg-img=" {{ asset('flexor/img/bg_footer-map.png') }} " data-stellar-background-ratio="0.4">
+ <!--==========================
+   Footer
+ ============================-->
+ <footer id="footer">
 
-    <div class="container">
-      
 
-      <div class="row" id="contact">
 
-        <div class="col-md-3">
-          <address>
-              <strong>Eoser la plateforme numerique de l'OSER</strong>
-              <br>
-              <i class="fa fa-map-pin fa-fw text-primary"></i> Abidjan , Cote d'Ivoire
-              <br>
-              <i class="fa fa-phone fa-fw text-primary"></i> +225 00 00 00 14
-              <br>
-              <i class="fa fa-envelope-o fa-fw text-primary"></i> info@eoser.com
-              <br>
-            </address>
-        </div>
 
-      <div class="row subfooter">
-        <!--@todo: replace with company copyright details-->
-        <div class="col-md-7">
-          <p>Copyright ©  <a href="">ALCALIS TECHNOLOGIES</a> </p>
-          <div class="credits">
-           
-          </div>
-        </div>
-        <div class="col-md-5">
-          
-        </div>
-      </div>
 
-      <a href="#top" class="scrolltop">Top</a>
+   <div class="container">
+     <div class="copyright">
+       &copy; Copyright <strong>Alcalis Technologies</strong>. Tous droits Reservés
+     </div>
+     <div class="credits">
+       <!--
+         All the links in the footer should remain intact.
+         You can delete the links only if you purchased the pro version.
+         Licensing information: https://bootstrapmade.com/license/
+         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
+       -->
+       Designed by <a href="#">Me</a>
+     </div>
+   </div>
+ </footer><!-- #footer -->
 
-    </div>
-  </div>
-  </footer>
-  
 
         {% block javascripts %}
   <!-- Required JavaScript Libraries -->
@@ -134,6 +157,31 @@
 
   <!--Contactform script -->
   <script src=" {{asset('flexor/contactform/contactform.js')}} "></script>
+
+
+
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src=" {{ asset('new/lib/jquery/jquery.min.js')}} "></script>
+    <script src=" {{ asset('new/lib/jquery/jquery-migrate.min.js')}} "></script>
+    <script src=" {{ asset('new/lib/bootstrap/js/bootstrap.bundle.min.js')}} "></script>
+    <script src=" {{ asset('new/lib/easing/easing.min.js')}} "></script>
+    <script src=" {{ asset('new/lib/mobile-nav/mobile-nav.js')}} "></script>
+    <script src=" {{ asset('new/lib/wow/wow.min.js')}} "></script>
+    <script src=" {{ asset('new/lib/waypoints/waypoints.min.js')}} "></script>
+    <script src=" {{ asset('new/lib/counterup/counterup.min.js')}} "></script>
+    <script src=" {{ asset('new/lib/owlcarousel/owl.carousel.min.js')}} "></script>
+    <script src=" {{ asset('new/lib/isotope/isotope.pkgd.min.js')}} "></script>
+    <script src=" {{ asset('new/lib/lightbox/js/lightbox.min.js')}} "></script>
+    <!-- Contact Form JavaScript File -->
+    <script src=" {{ asset('new/contactform/contactform.js')}} "></script>
+
+    <!-- Template Main Javascript File -->
+    <script src=" {{ asset('new/js/main.js')}} "></script>
         {% endblock %}
    </div>
 

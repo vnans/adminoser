@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ArticleRepository;
 use App\Repository\ActualiteRepository;
+use App\Repository\VideoRepository;
 use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends AbstractController
@@ -14,16 +15,17 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="defaut")
      */
-    public function defaut(ArticleRepository $articleRepository , ActualiteRepository $actualiteRepository ): Response
+    public function defaut(VideoRepository $videoRepository, ArticleRepository $articleRepository , ActualiteRepository $actualiteRepository ): Response
     {
         // return $this->render('@FOSUser/Security/login.html.twig', array(
         //     'last_username' => null,
         //     'error' => null,
         //     'csrf_token' => null,
         // ) );
-        return $this->render('default/defaut.html.twig' ,[
+        return $this->render('default/default.html.twig' ,[
             'actualites' => $actualiteRepository->findAll(),
-            'articles' => $articleRepository->findAll()
+            'articles' => $articleRepository->findAll(),
+            'videos'  => $videoRepository->findAll(),
         ]);
     }
 /**

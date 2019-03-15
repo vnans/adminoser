@@ -22,7 +22,7 @@ security:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
                 always_use_default_target_path: false
-                default_target_path: default
+                # default_target_path: default
 
 
 
@@ -43,15 +43,15 @@ security:
         # - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/default, role: ROLE_USER }
-        - { path: ^/actualite, role: ROLE_USER }
-        - { path: ^/souscription, role: ROLE_USER }
-        - { path: ^/facturation, role: ROLE_USER }
-        - { path: ^/role, role: ROLE_USER }
-        - { path: ^/service, role: ROLE_USER }
-        - { path: ^/user, role: ROLE_USER }
-        - { path: ^/user_role, role: ROLE_USER }
+        - { path: ^/actualite, role: ROLE_ADMIN }
+        - { path: ^/souscription, role: ROLE_ADMIN }
+        - { path: ^/facturation, role: ROLE_ADMIN }
+        - { path: ^/role, role: ROLE_ADMIN }
+        - { path: ^/service, role: ROLE_ADMIN }
+        - { path: ^/user, role: ROLE_ADMIN }
+        - { path: ^/user_role, role: ROLE_ADMIN }
 
 
-        
+
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }

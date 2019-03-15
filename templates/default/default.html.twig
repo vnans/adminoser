@@ -1,0 +1,324 @@
+{% extends 'baseweb.html.twig' %}
+
+{% block title %}Accueil-eoser!{% endblock %}
+
+{% block body %}
+<body>
+
+
+
+
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro" class="clearfix">
+    <div class="container">
+    <!--
+     <div class="intro-img">
+        <img src=" {{ asset('new/img/intro-img.svg') }} " alt="" class="img-fluid">
+      </div>
+-->
+      <div class="intro-info">
+        <h2>Envoyer par SMS<br><span>OSER AU 98025</span><br> 206F/15 jours</h2>
+        <div>
+          <a href="#about" class="btn-get-started scrollto">Souscrivez </a>
+            <a href="#services" class="btn-services scrollto">Actu</a>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- #intro  -->
+
+  <main id="main">
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>A propos de Eoser   </h3>
+          <p>.
+          </p>
+        </header>
+
+        <div class="row about-container">
+
+          <div class="col-lg-6 content order-lg-1 order-2">
+            <p>
+            Le service « e-OSER » est une plateforme innovante, de diffusions d’informations et de sensibilisation en direction des usagers de la route en générale, de la population en particulier sur tout le territoire ivoirien.
+            Le service « e-OSER », dédié à l’OFFICE DE SECURITE ROUTIERE, permettra de mieux l’aider dans sa mission de RECHERCHE et de MISE EN ŒUVRE de tous les moyens destinés à accroitre la SECURITE DES USAGERS DE LA ROUTE.
+            </p>
+
+
+          </div>
+
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+
+          <h4> DOMAINE D’ACTION</h4>
+          <p>
+  Le Service « e-OSER », dans son fonctionnement se base sur un nouveau support efficace de sensibilisation : LE PORTABLE MOBILE.
+  Les chiffres récents de l’ARTCI (Autorité de Régulation des Télécommunication/Tics de Côte d’Ivoire) font état de Trente-Six Millions (36.000.000) d’Abonnés sur tout le territoire ivoirien.
+  D’où des potentiels usages de la route qui pourraient recevoir de manière instantanée différentes types d’informations par SMS sur leurs mobiles.
+  Ainsi, avec « e-OSER », l’OFFICE DE SECURITE ROUTIERE, pourra en 01 SEUL CLIC, sensibiliser une grande marge de la population s’étant abonné au service.
+  </p>
+          </div>
+        </div>
+
+
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Actualités
+    ============================-->
+    <section id="services" class="section-bg">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Actu</h3>
+          <p>.</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-md-4 col-lg-4 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon"><i class="ion-ios-message" style="color: #ff689b;"></i></div>
+              <h4 class="title"><a href="">titre</a></h4>
+              <p class="description">texte texte message </p>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box">
+              <div class="icon"><i class="ion-ios-message" style="color: #ff689b;"></i></div>
+              <h4 class="title"><a href="">titre</a></h4>
+              <p class="description">texte texte message </p>
+            </div>
+          </div>
+        {% for actualite in actualites %}
+        <div class="col-md-4 col-lg-4 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
+          <div class="box">
+            <div class="icon"><i class="ion-ios-message" style="color: #ff689b;"></i></div>
+            <h4 class="title"><a href="">{{ actualite.titre}}</a></h4>
+            <p class="description">{{ actualite.information}} </p>
+          </div>
+        </div>
+
+        {% endfor %}
+
+
+        </div>
+
+      </div>
+    </section><!-- #services -->
+
+    <!--==========================
+    NOS ARTICLES
+    ============================-->
+    <section id="why-us"  class="wow fadeIn">
+      <div class="container">
+        <header class="section-header">
+          <h3>Nos articles </h3>
+          <p>... </p>
+        </header>
+
+        <div class="row row-eq-height justify-content-center">
+
+          <div class="col-lg-4 mb-4">
+            <div class="card wow bounceInUp">
+                <!-- <i class="fa fa-diamond"></i> -->
+              <div class="card-body">
+                <h5 class="card-title">Titre</h5>
+                <p class="card-text">contenu.</p>
+                <a href="#" class="readmore">Lire la suite</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mb-4">
+            <div class="card wow bounceInUp">
+                <!-- <i class="fa fa-diamond"></i> -->
+              <div class="card-body">
+                <h5 class="card-title">Titre</h5>
+                <p class="card-text">contenu.</p>
+                <a href="#" class="readmore">Lire la suite</a>
+              </div>
+            </div>
+          </div>
+          {% for article in articles %}
+          <div class="col-lg-4 mb-4">
+            <div class="card wow bounceInUp">
+                <!-- <i class="fa fa-diamond"></i> -->
+              <div class="card-body">
+                <h5 class="card-title">{{ article.titre }}</h5>
+                <p class="card-text">{{ article.contenu }}.</p>
+                <a href=" {{path('article_index') }} " class="readmore">Lire la suite</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+
+
+        </div>
+
+
+      </div>
+    </section>
+
+    <!--==========================
+      Portfolio Section
+    ============================-->
+    <section id="portfolio" class="clearfix">
+      <div class="container">
+
+        <header class="section-header">
+          <h3 class="section-title">La vidéotèque</h3>
+        </header>
+
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OhhUwdWBjxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ptVWtvHuj1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nCXJHNq9o4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          </div>
+          {% for video in videos %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+<iframe width="560" height="315" src="{{ video.lien}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+
+        </div>
+
+      </div>
+    </section><!-- #portfolio -->
+
+
+
+
+    <!--==========================
+      Clients Section
+    ============================-->
+    <section id="clients" class="section-bg">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h3>Nos Partenaires</h3>
+          <p>...</p>
+        </div>
+
+        <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="new/img/clients/alcalis.jpeg" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="new/img/clients/oci.jpg" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="new/img/clients/MT.jpg" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="new/img/clients/oser.jpg" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+            <b class="text-center">DH services</b>
+            </div>
+          </div>
+
+          <!-- <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="new/img/clients/client-6.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="new/img/clients/client-7.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="client-logo">
+              <img src="new/img/clients/client-8.png" class="img-fluid" alt="">
+            </div>
+          </div> -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact">
+      <div class="container-fluid">
+
+        <div class="section-header">
+          <h3>Contactez Nous</h3>
+        </div>
+
+        <div class="row wow fadeInUp">
+
+
+
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-md-5 info">
+                <i class="ion-ios-location-outline"></i>
+                <p>Cote d'Ivoire , Abidjan</p>
+              </div>
+              <div class="col-md-4 info">
+                <i class="ion-ios-email-outline"></i>
+                <p>alcalis@alcalis.tech</p>
+              </div>
+              <div class="col-md-3 info">
+                <i class="ion-ios-telephone-outline"></i>
+                <p>+225  89 22 43 22</p>
+                <i class="ion-ios-telephone-outline"></i>
+                <p>+225  89 22 43 22</p>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+{% endblock %}

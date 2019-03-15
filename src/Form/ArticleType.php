@@ -5,6 +5,8 @@ namespace App\Form;
 use App\Entity\Article;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ArticleType extends AbstractType
@@ -13,10 +15,10 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('contenu')
-            ->add('ladate')
-            ->add('image')
-            ->add('slug')
+            ->add('contenu', TextareaType::class)
+          //  ->add('ladate')
+            ->add('image',FileType::class , array('data_class'=>null))
+          //  ->add('slug')
         ;
     }
 

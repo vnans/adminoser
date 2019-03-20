@@ -99,7 +99,7 @@
               <p class="description">texte texte message </p>
             </div>
           </div>
-        {% for actualite in actualites %}
+        {% for actualite in actualites|slice(0,6) %}
         <div class="col-md-4 col-lg-4 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
           <div class="box">
             <div class="icon"><i class="ion-ios-message" style="color: #ff689b;"></i></div>
@@ -149,7 +149,7 @@
               </div>
             </div>
           </div>
-          {% for article in articles %}
+          {% for article in articles|slice(0,6) %}
           <div class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
                 <!-- <i class="fa fa-diamond"></i> -->
@@ -190,7 +190,7 @@
           </div>
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nCXJHNq9o4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          </div>
-          {% for video in videos %}
+          {% for video in videos|slice(0,6) %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
 <iframe width="560" height="315" src="{{ video.lien}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          </div>
           {% endfor %}

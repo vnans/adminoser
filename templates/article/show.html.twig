@@ -3,249 +3,46 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
-<body class="page-about">
-  <!--Change the background class to alter background image, options are: benches, boots, buildings, city, metro -->
-  <div id="background-wrapper" class="buildings" data-stellar-background-ratio="0.8">
-    <!-- ======== @Region: #navigation ======== -->
-    <div id="navigation" class="wrapper">
-      <!--Hidden Header Region-->
-      <div class="header-hidden collapse">
-        <div class="header-hidden-inner container">
-          <div class="row">
-            <div class="col-md-3">
-              <h3>
-                  About Us
-                </h3>
-              <p>Flexor is a super flexible responsive theme with a modest design touch.</p>
-              <a href="about.html" class="btn btn-more"><i class="fa fa-plus"></i> Learn more</a>
-            </div>
-            <div class="col-md-3">
-              <!--@todo: replace with company contact details-->
-              <h3>
-                  Contact Us
-                </h3>
-              <address>
-                  <strong>Flexor Bootstrap Theme Inc</strong>
-                  <abbr title="Address"><i class="fa fa-pushpin"></i></abbr>
-                  Sunshine House, Sunville. SUN12 8LU.
-                  <br>
-                  <abbr title="Phone"><i class="fa fa-phone"></i></abbr>
-                  019223 8092344
-                  <br>
-                  <abbr title="Email"><i class="fa fa-envelope-alt"></i></abbr>
-                  info@flexorinc.com
-                </address>
-            </div>
-            <div class="col-md-6">
-              <!--Colour & Background Switch for demo - @todo: remove in production-->
-              {# <h3>
-                  Theme Variations
-                </h3>
-              <div class="switcher">
-                <div class="cols">
-                  Backgrounds:
-                  <br>
-                  <a href="#benches" class="background benches active" title="Benches">Benches</a> <a href="#boots" class="background boots " title="Boots">Boots</a> <a href="#buildings" class="background buildings " title="Buildings">Buildings</a>
-                  <a
-                    href="#city" class="background city " title="City">City</a> <a href="#metro" class="background metro " title="Metro">Metro</a>
-                </div>
-                <div class="cols">
-                  Colours:
-                  <br>
-                  <a href="#orange" class="colour orange active" title="Orange">Orange</a> <a href="#green" class="colour green " title="Green">Green</a> <a href="#blue" class="colour blue " title="Blue">Blue</a> <a href="#lavender" class="colour lavender "
-                    title="Lavender">Lavender</a>
-                </div>
-              </div>
-              <p>
-                <small>Selection is not persistent.</small>
-              </p> #}
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Header & navbar-branding region-->
-      <div class="header">
-        <div class="header-inner container">
-          <div class="row">
-            <div class="col-md-8">
-              <!--navbar-branding/logo - hidden image tag & site name so things like Facebook to pick up, actual logo set via CSS for flexibility -->
-              <a class="navbar-brand" href="index.html" title="Home">
-                <h1 class="hidden">
-                    <img src="img/logo.png" alt="Flexor Logo">
-                    Flexor
-                  </h1>
-              </a>
-              <div class="navbar-slogan">
-                Responsive HTML Theme
-                <br> By BootstrapMade.com
-              </div>
-            </div>
-            <!--header rightside-->
-            <div class="col-md-4">
-              <!--user menu-->
-              <ul class="list-inline user-menu pull-right">
-                <li class="hidden-xs"><i class="fa fa-edit text-primary"></i> <a href="register.html" class="text-uppercase">Register</a></li>
-                <li class="hidden-xs"><i class="fa fa-sign-in text-primary"></i> <a href="login.html" class="text-uppercase">Login</a></li>
-                <li><a class="btn btn-primary btn-hh-trigger" role="button" data-toggle="collapse" data-target=".header-hidden">Open</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="navbar navbar-default">
-          <!--mobile collapse menu button-->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <!--social media icons-->
-          <div class="navbar-text social-media social-media-inline pull-right">
-            <!--@todo: replace with company social media details-->
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-google-plus"></i></a>
-          </div>
-          <!--everything within this div is collapsed on mobile-->
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" id="main-menu">
-              <li class="icon-link">
-                <a href="index.html"><i class="fa fa-home"></i></a>
-              </li>
-              
-              
-            </ul>
-          </div>
-          <!--/.navbar-collapse -->
-        </div>
-      </div>
-    </div>
-     
-  </div>
+<body>
 
-  <!-- ======== @Region: #content ======== -->
-  <div id="content">
-    <div class="container" id="about">
-      <div class="row">
-        <!--main content-->
-        <div class="col-md-9 col-md-push-3">
-          <div class="page-header">
-            <h1>
-               {{ article.titre }}
-                {# <small>How it all began</small> #}
-              </h1>
-          </div>
-          <div class="block block-border-bottom-grey block-pd-sm">
-           {#  <h3 class="block-title">
-                What Makes Us Tick!
-              </h3> #}
-            <img src="{{ article.image }}" alt="About us" class="img-responsive img-thumbnail pull-right m-l m-b">
-            <p>{{ article.contenu }}.</p>
-          </div>
-          
-          
-        </div>
-        <!-- sidebar -->
-        <div class="col-md-3 col-md-pull-9 sidebar visible-md-block visible-lg-block">
-          <ul class="nav nav-pills nav-stacked">
-             {% for lesarticles in articles %}
 
-            <li class="active">
-              <a  href="{{ path('article_show', {'id': lesarticles.id}) }}" class="first">
-                  {{ lesarticles.titre }}
-                 {#  <small>How It All Began</small> #}
-                </a>
-            </li>
-            
-             {% endfor %}
-          
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Call out block -->
-  <div class="block block-bg-primary block-bg-overlay block-bg-overlay-5 text-center" data-block-bg-img="https://picjumbo.imgix.net/HNCK8991.jpg?q=40&amp;w=1650&amp;sharp=30" data-stellar-background-ratio="0.3">
-    <h2 class="m-t-0">
-        Faites partir de nos formidables partenaire
-      </h2>
-    <p class="m-a-0">
-      <a href="#" class="btn btn-more btn-lg i-right">Nous contacter <i class="fa fa-angle-right"></i></a>
-    </p>
-  </div>
-   <!-- Call out block -->
-  <div class="block block-pd-sm block-bg-primary">
+<section id="about">
     <div class="container">
-      <div class="row">
-        <h3 class="col-md-4">
-            Nos partenaires
-          </h3>
-        <div class="col-md-8">
-          <div class="row">
-            <!--Client logos should be within a 120px wide by 60px height image canvas-->
-            <div class="col-xs-6 col-md-2">
-              <a href="https://bootstrapmade.com" title="Client 1">
-                  <img src=" {{ asset('flexor/img/clients/client1.png') }} " alt="Client 1 logo" class="img-responsive">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <a href="https://bootstrapmade.com" title="Client 2">
-                  <img src=" {{ asset('flexor/img/clients/client2.png') }} " alt="Client 2 logo" class="img-responsive">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <a href="https://bootstrapmade.com" title="Client 3">
-                  <img src=" {{ asset('flexor/img/clients/client3.png') }} " alt="Client 3 logo" class="img-responsive">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <a href="https://bootstrapmade.com" title="Client 4">
-                  <img src=" {{ asset('flexor/img/clients/client4.png') }} " alt="Client 4 logo" class="img-responsive">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <a href="https://bootstrapmade.com" title="Client 5">
-                  <img src=" {{ asset('flexor/img/clients/client5.png') }} " alt="Client 5 logo" class="img-responsive">
-                </a>
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <a href="https://bootstrapmade.com" title="Client 6">
-                  <img src=" {{ asset('flexor/img/clients/client6.png') }} " alt="Client 6 logo" class="img-responsive">
-                </a>
-            </div>
-          </div>
+<p></p>
+<p></p>
+      <header class="section-header">
+        <h3>{{ article.titre }}</h3>
+        <p>
+    <!-- <b> {{ article.titre }}</b> -->
+        </p>
+      </header>
+
+
+
+      <div class="row about-extra">
+        <div class="col-lg-6 wow fadeInUp">
+          <img src="{{ asset('img/')}}{{ article.image }} " class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
+          <h4>{{ article.titre }}.</h4>
+          <p>
+          {{ article.contenu }}
+          </p>
+
         </div>
       </div>
+
+
+
     </div>
-  </div> 
-
-
-
-</body>
+  </section><!-- #about -->
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{# 
+{#
     <h1>Article</h1>
 
     <table class="table">
@@ -277,9 +74,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('article_index') }}">back to list</a>
+    <a href="{{ path('article_index2') }}">back to list</a>
 
     <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
 
     {{ include('article/_delete_form.html.twig') }} #}
+    <a href="{{ path('article_index2') }}">Retour à la liste</a>
+</body>
 {% endblock %}

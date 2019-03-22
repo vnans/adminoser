@@ -85,21 +85,7 @@
 
         <div class="row">
 
-          <div class="col-md-4 col-lg-4 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><i class="ion-ios-message" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">titre</a></h4>
-              <p class="description">texte texte message </p>
-            </div>
-          </div>
-          <div class="col-md-4 col-lg-4 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
-            <div class="box">
-              <div class="icon"><i class="ion-ios-message" style="color: #ff689b;"></i></div>
-              <h4 class="title"><a href="">titre</a></h4>
-              <p class="description">texte texte message </p>
-            </div>
-          </div>
-        {% for actualite in actualites|slice(0,6) %}
+        {% for actualite in actualites|slice(5,6) %}
         <div class="col-md-4 col-lg-4 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
           <div class="box">
             <div class="icon"><i class="ion-ios-message" style="color: #ff689b;"></i></div>
@@ -123,32 +109,14 @@
       <div class="container">
         <header class="section-header">
           <h3>Nos articles </h3>
-          <p>... </p>
+          <p>  <a style="color:rgb(224, 255, 255)" href=" {{path('article_index2') }}" > <button type="button" name="button" class="btn btn-warning">Lire tous nos articles ici</button> </a></p>
         </header>
 
         <div class="row row-eq-height justify-content-center">
 
-          <div class="col-lg-4 mb-4">
-            <div class="card wow bounceInUp">
-                <!-- <i class="fa fa-diamond"></i> -->
-              <div class="card-body">
-                <h5 class="card-title">Titre</h5>
-                <p class="card-text">contenu.</p>
-                <a href="#" class="readmore">Lire la suite</a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 mb-4">
-            <div class="card wow bounceInUp">
-                <!-- <i class="fa fa-diamond"></i> -->
-              <div class="card-body">
-                <h5 class="card-title">Titre</h5>
-                <p class="card-text">contenu.</p>
-                <a href="#" class="readmore">Lire la suite</a>
-              </div>
-            </div>
-          </div>
+
+
           {% for article in articles|slice(0,6) %}
           <div class="col-lg-4 mb-4">
             <div class="card wow bounceInUp">
@@ -156,13 +124,15 @@
               <div class="card-body">
                 <h5 class="card-title">{{ article.titre }}</h5>
                 <p class="card-text">{{ article.contenu }}.</p>
-                <a href=" {{path('article_index') }} " class="readmore">Lire la suite</a>
+                <a href="{{ path('article_show', {'id': article.id}) }}"class="readmore">Lire la suite</a>
+                <!-- <a href=" {{path('article_index2') }} " class="readmore">Lire la suite</a> -->
               </div>
             </div>
           </div>
+
           {% endfor %}
 
-
+  <a href=" {{path('article_index2') }} " class="readmore">Plus d'articles</a>
 
         </div>
 
@@ -183,16 +153,10 @@
 
         <div class="row portfolio-container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OhhUwdWBjxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ptVWtvHuj1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nCXJHNq9o4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          </div>
           {% for video in videos|slice(0,6) %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-<iframe width="560" height="315" src="{{ video.lien}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          </div>
+            <iframe width="560" height="315" src="{{ video.lien}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
           {% endfor %}
         </div>
       </div>
@@ -224,30 +188,36 @@
             <div class="client-logo">
               <img src="new/img/clients/alcalis.jpeg" class="img-fluid" alt="">
             </div>
+              <p class="text-center" >Alcalis technologies</p>
           </div>
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
               <img src="new/img/clients/oci.jpg" class="img-fluid" alt="">
             </div>
+              <p class="text-center" >Orange CI</p>
           </div>
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="new/img/clients/MT.jpg" class="img-fluid" alt="">
+              <img src="http://www.transports.gouv.ci/sites/default/files/amoirie_1.png" class="img-fluid" alt="">
+
             </div>
+              <p class="text-center" >Ministère du transport</p>
           </div>
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
               <img src="new/img/clients/oser.jpg" class="img-fluid" alt="">
             </div>
+              <p class="text-center" >0SER</p>
           </div>
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
             <b class="text-center">DH services</b>
             </div>
+              <p class="text-center" >DH services</p>
           </div>
 
           <!-- <div class="col-lg-3 col-md-4 col-xs-6">

@@ -45,8 +45,30 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
+      $em = $this->getDoctrine()->getManager();
+      // total des Abonnes
+      $req = $em->createQuery('SELECT  COUNT(a) FROM App\Entity\User a');
+      $res = $req->getResult();
+      $totalAbonnes = $res['0']['1'];
+      //total des souscriptions
+      $req1 = $em->createQuery('SELECT  COUNT(s) FROM App\Entity\Souscription s');
+      $res1 = $req1->getResult();
+      $totalSouscriptions = $res1['0']['1'];
+      //total des admins
+      $req2 = $em->createQuery('SELECT  COUNT(f) FROM App\Entity\Fuser f');
+      $res2 = $req2->getResult();
+      $totalAdmin = $res2['0']['1'];
+      //total des post
+      $req3 = $em->createQuery('SELECT  COUNT(f) FROM App\Entity\Fuser f');
+      $res3 = $req3->getResult();
+      $totalPub = $res3['0']['1'];
+    //  var_dump($res);
         return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
+            'totalSouscriptions' => $totalSouscriptions ,
+            'totalAbonnes' => $totalAbonnes ,
+            'totalAdmin' => $totalAdmin ,
+            'totalPub'  => $totalPub ,
         ]);
     }
+  
 }

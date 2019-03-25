@@ -42,14 +42,14 @@ security:
         # - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/default, role: ROLE_USER }
+        - { path: ^/default, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/actualite, role: ROLE_ADMIN }
-        - { path: ^/souscription, role: ROLE_ADMIN }
-        - { path: ^/facturation, role: ROLE_ADMIN }
-        - { path: ^/role, role: ROLE_ADMIN }
-        - { path: ^/service, role: ROLE_ADMIN }
-        - { path: ^/user, role: ROLE_ADMIN }
-        - { path: ^/user_role, role: ROLE_ADMIN }
+        - { path: ^/souscription, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/facturation, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/role, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/service, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/user, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/user_role, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
 
 

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Fuser;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -10,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\guessExtension;
+
 
 /**
  * @Route("/article")
@@ -28,6 +30,54 @@ class ArticleController extends AbstractController
      */
     public function index2(ArticleRepository $articleRepository): Response
     {
+      $entityManager = $this->getDoctrine()->getManager();
+      $REQ = $entityManager->createQuery('SELECT v.valeur FROM App\Entity\Compteur v');
+      $lastId = $REQ->getResult() ;
+
+      $req = $entityManager->createQuery('SELECT x.username , x.id FROM App\Entity\User x  WHERE x.id > :id ');
+      $req->setParameters(array(
+
+               'id' => $lastId,
+           ));
+
+      $newAbonnes = $req->getResult() ;
+      $req2 = $entityManager->createQuery('SELECT count(s.id)  FROM App\Entity\User s WHERE s.id > :id');
+      $req2->setParameters(array(
+               'id' => $lastId,
+           ));
+          $record = $req2->getResult();
+          if ($record > 0 ){
+      ini_set('max_execution_time',0); //300 seconds = 5 minutes
+      foreach ($newAbonnes as $abonnes) {
+             // var_dump($abonnes['username']);
+          if (strlen($abonnes['username']) > 7) { // si c'est un  numero de telephone
+              $numero=substr($abonnes['username'],-8) ; //on retire l'indicatif
+              $user = new Fuser();
+        //      $user->setIduser($abonnes['id']);
+              $user->setUsername($numero);
+              $user->setPassword($numero);
+              $user->setEmail($numero);
+              $user->setEnabled('1');
+
+              $entityManager->persist($user);
+              $entityManager->flush();
+              // mettre a jour lecompteur
+              $this->em= $entityManager;
+                      $qb = $this->em->createQueryBuilder();
+                      $req = $qb->update('App\Entity\Compteur', 'c')
+                              ->set('c.valeur', '?1')
+                              ->where('c.id = ?2')
+                              ->setParameter(1, $abonnes['id'])
+                              ->setParameter(2,1)
+                              ->getQuery();
+                      $res = $req->execute();
+           }
+          // mettre a jour les nouveaux users
+
+
+          }
+      }
+
         return $this->render('article/index2.html.twig', ['articles' => $articleRepository->findAll()]);
     }
 
